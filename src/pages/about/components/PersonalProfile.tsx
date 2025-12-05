@@ -1,4 +1,4 @@
-import { PersonalInfo } from '../types';
+import type { PersonalInfo } from '../types';
 import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
 

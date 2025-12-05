@@ -1,4 +1,4 @@
-import { SkillProgress } from '../types';
+import type { SkillProgress } from '../types';
 import Icon from '../../../components/AppIcon';
 
 interface SkillProgressChartProps {

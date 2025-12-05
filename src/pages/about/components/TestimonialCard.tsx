@@ -1,4 +1,4 @@
-import { Testimonial } from '../types';
+import type { Testimonial } from '../types';
 import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
 
