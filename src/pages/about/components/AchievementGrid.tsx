@@ -1,5 +1,6 @@
 import type { Achievement } from '../types';
 import Icon from '../../../components/AppIcon';
+
 interface AchievementGridProps {
   achievements: Achievement[];
 }

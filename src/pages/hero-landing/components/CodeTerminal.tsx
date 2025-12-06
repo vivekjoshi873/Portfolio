@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
-import type { CodeSnippet } from '../types/index';
+import type { CodeSnippet } from '../types';
 
 interface CodeTerminalProps {
   snippets: CodeSnippet[];
@@ -39,8 +39,9 @@ const CodeTerminal = ({ snippets }: CodeTerminalProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
+      className="relative w-full max-w-2xl mx-auto"
     >
-      <div className="relative w-full max-w-2xl mx-auto bg-neutral-900 rounded-lg shadow-lg overflow-hidden border border-neutral-800">
+      <div className="bg-neutral-900 rounded-lg shadow-lg overflow-hidden border border-neutral-800">
         <div className="flex items-center justify-between px-4 py-2 bg-neutral-800 border-b border-neutral-700">
           <div className="flex items-center space-x-2">
             <div className="w-3 h-3 rounded-full bg-error"></div>
@@ -53,10 +54,9 @@ const CodeTerminal = ({ snippets }: CodeTerminalProps) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
+              className="text-xs text-neutral-400 font-mono"
             >
-              <span className="text-xs text-neutral-400 font-mono">
-                {snippets[currentSnippet].filename}
-              </span>
+              {snippets[currentSnippet].filename}
             </motion.span>
           </AnimatePresence>
           <div className="flex items-center space-x-2">
@@ -71,16 +71,16 @@ const CodeTerminal = ({ snippets }: CodeTerminalProps) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              className="text-neutral-100"
             >
-              <code className="text-neutral-100">
+              <code>
                 {displayedCode}
                 {isTyping && (
                   <motion.span
                     animate={{ opacity: [1, 0] }}
                     transition={{ duration: 0.5, repeat: Infinity }}
-                  >
-                    <span className="inline-block w-2 h-4 bg-primary ml-1" />
-                  </motion.span>
+                    className="inline-block w-2 h-4 bg-primary ml-1"
+                  />
                 )}
               </code>
             </motion.pre>

@@ -32,32 +32,28 @@ const SocialLinks = ({ links }: SocialLinksProps) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      className="flex items-center justify-center space-x-4"
     >
-      <div className="flex items-center justify-center space-x-4">
-        {links.map((link) => (
-          <motion.div
-            key={link.id}
-            variants={itemVariants}
-            whileHover={{ scale: 1.1, y: -3 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-card rounded-full flex items-center justify-center border border-border hover:border-primary hover:bg-primary/10 transition-all duration-base shadow-sm hover:shadow-md group"
-              aria-label={`Visit ${link.platform} profile: ${link.username}`}
-            >
-              <Icon
-                name={link.icon as any}
-                size={20}
-                className="text-text-secondary group-hover:text-primary transition-colors duration-base"
-                strokeWidth={2}
-              />
-            </a>
-          </motion.div>
-        ))}
-      </div>
+      {links.map((link) => (
+        <motion.a
+          key={link.id}
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          variants={itemVariants}
+          whileHover={{ scale: 1.1, y: -3 }}
+          whileTap={{ scale: 0.95 }}
+          className="w-12 h-12 bg-card rounded-full flex items-center justify-center border border-border hover:border-primary hover:bg-primary/10 transition-all duration-base shadow-sm hover:shadow-md group"
+          aria-label={`Visit ${link.platform} profile: ${link.username}`}
+        >
+          <Icon
+            name={link.icon}
+            size={20}
+            className="text-text-secondary group-hover:text-primary transition-colors duration-base"
+            strokeWidth={2}
+          />
+        </motion.a>
+      ))}
     </motion.div>
   );
 };

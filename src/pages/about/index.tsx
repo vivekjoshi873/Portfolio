@@ -7,7 +7,7 @@ import TestimonialCard from './components/TestimonialCard';
 import AchievementGrid from './components/AchievementGrid';
 import KeyHighlights from './components/KeyHighlights';
 import Button from '../../components/ui/Button';
-import { PersonalInfo, TimelineEvent, SkillProgress, Testimonial, Achievement } from './types';
+import type { PersonalInfo, TimelineEvent, SkillProgress, Testimonial, Achievement } from './types';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);

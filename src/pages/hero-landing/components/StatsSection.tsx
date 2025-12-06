@@ -32,33 +32,31 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto"
     >
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-        {stats.map((stat) => (
-          <motion.div
-            key={stat.id}
-            variants={itemVariants}
-            whileHover={{ scale: 1.05, y: -5 }}
-          >
-            <div className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow duration-base">
-              <div className="flex flex-col items-center text-center space-y-2">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Icon
-                    name={stat.icon as any}
-                    size={24}
-                    className="text-primary"
-                    strokeWidth={2}
-                  />
-                </div>
-                <div className="text-3xl font-bold text-foreground font-headline">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-text-secondary">{stat.label}</div>
-              </div>
+      {stats.map((stat) => (
+        <motion.div
+          key={stat.id}
+          variants={itemVariants}
+          whileHover={{ scale: 1.05, y: -5 }}
+          className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow duration-base"
+        >
+          <div className="flex flex-col items-center text-center space-y-2">
+            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+              <Icon
+                name={stat.icon}
+                size={24}
+                className="text-primary"
+                strokeWidth={2}
+              />
             </div>
-          </motion.div>
-        ))}
-      </div>
+            <div className="text-3xl font-bold text-foreground font-headline">
+              {stat.value}
+            </div>
+            <div className="text-sm text-text-secondary">{stat.label}</div>
+          </div>
+        </motion.div>
+      ))}
     </motion.div>
   );
 };

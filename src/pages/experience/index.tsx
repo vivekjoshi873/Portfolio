@@ -10,7 +10,7 @@ import ReferenceCard from './components/ReferenceCard';
 import CertificateCard from './components/CertificateCard';
 import TimelineView from './components/TimelineView';
 import StatsCard from './components/StatsCard';
-import {
+import type {
   Experience,
   Certificate,
   TimelineEvent } from

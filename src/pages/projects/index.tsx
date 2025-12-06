@@ -6,7 +6,7 @@ import ProjectCard from './components/ProjectCard';
 import ProjectFiltersComponent from './components/ProjectFilters';
 import ProjectModal from './components/ProjectModal';
 import ProjectStats from './components/ProjectStats';
-import { Project, ProjectFilters, FilterOption } from './types';
+import type { Project, ProjectFilters, FilterOption } from './types';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
