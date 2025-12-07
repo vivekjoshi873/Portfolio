@@ -1,24 +1,24 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Icon from '../AppIcon';
-import Button from './Button';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Icon from "../AppIcon";
+import Button from "./Button";
 
 interface HeaderProps {
   className?: string;
 }
 
-const Header = ({ className = '' }: HeaderProps) => {
+const Header = ({ className = "" }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   const navigationItems = [
-    { label: 'Home', path: '/hero-landing', icon: 'Home' },
-    { label: 'About', path: '/about', icon: 'User' },
-    { label: 'Skills', path: '/skills', icon: 'Code' },
-    { label: 'Projects', path: '/projects', icon: 'FolderGit2' },
-    { label: 'Experience', path: '/experience', icon: 'Briefcase' },
-    { label: 'Contact', path: '/contact', icon: 'Mail' },
+    { label: "Home", path: "/hero-landing", icon: "Home" },
+    { label: "About", path: "/about", icon: "User" },
+    { label: "Skills", path: "/skills", icon: "Code" },
+    { label: "Projects", path: "/projects", icon: "FolderGit2" },
+    { label: "Experience", path: "/experience", icon: "Briefcase" },
+    { label: "Contact", path: "/contact", icon: "Mail" },
   ];
 
   useEffect(() => {
@@ -26,15 +26,15 @@ const Header = ({ className = '' }: HeaderProps) => {
       setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
   }, [isMobileMenuOpen]);
 
@@ -53,8 +53,8 @@ const Header = ({ className = '' }: HeaderProps) => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-base ${
           isScrolled
-            ? 'bg-background/95 backdrop-blur-sm shadow-md'
-            : 'bg-transparent'
+            ? "bg-background/95 backdrop-blur-sm shadow-md"
+            : "bg-transparent"
         } ${className}`}
       >
         <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -76,9 +76,6 @@ const Header = ({ className = '' }: HeaderProps) => {
                 <span className="text-lg font-bold text-foreground font-headline">
                   DevPortfolio
                 </span>
-                <span className="text-xs text-text-secondary block -mt-1 font-mono">
-                  Pro
-                </span>
               </div>
             </Link>
 
@@ -89,8 +86,8 @@ const Header = ({ className = '' }: HeaderProps) => {
                   to={item.path}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-fast ${
                     isActivePath(item.path)
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-text-secondary hover:text-foreground hover:bg-muted'
+                      ? "bg-primary text-primary-foreground"
+                      : "text-text-secondary hover:text-foreground hover:bg-muted"
                   }`}
                 >
                   {item.label}
@@ -99,31 +96,17 @@ const Header = ({ className = '' }: HeaderProps) => {
             </nav>
 
             <div className="hidden lg:flex items-center space-x-3">
-              <div className="flex items-center space-x-2 px-3 py-1.5 bg-success/10 rounded-full">
-                <div className="w-2 h-2 bg-success rounded-full animate-pulse-subtle"></div>
-                <span className="text-xs font-medium text-success">
-                  Available
-                </span>
-              </div>
               <Button
+                asChild
                 variant="outline"
                 size="sm"
                 iconName="Download"
                 iconPosition="left"
                 iconSize={16}
-                onClick={() => window.open('/assets/cv.pdf', '_blank')}
               >
-                Download CV
-              </Button>
-              <Button
-                variant="default"
-                size="sm"
-                iconName="Mail"
-                iconPosition="left"
-                iconSize={16}
-                onClick={() => (window.location.href = '/contact')}
-              >
-                Contact
+                <a href="/Resume.pdf" download="Resume.pdf">
+                  Download CV
+                </a>
               </Button>
             </div>
 
@@ -133,7 +116,7 @@ const Header = ({ className = '' }: HeaderProps) => {
               aria-label="Toggle mobile menu"
             >
               <Icon
-                name={isMobileMenuOpen ? 'X' : 'Menu'}
+                name={isMobileMenuOpen ? "X" : "Menu"}
                 size={24}
                 strokeWidth={2}
               />
@@ -145,14 +128,15 @@ const Header = ({ className = '' }: HeaderProps) => {
       <div
         className={`fixed inset-0 bg-background/80 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-base ${
           isMobileMenuOpen
-            ? 'opacity-100 pointer-events-auto' :'opacity-0 pointer-events-none'
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
         onClick={closeMobileMenu}
       />
 
       <div
         className={`fixed top-0 right-0 bottom-0 w-full max-w-sm bg-background shadow-lg z-50 lg:hidden transform transition-transform duration-base ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex flex-col h-full">
@@ -178,8 +162,8 @@ const Header = ({ className = '' }: HeaderProps) => {
                   onClick={closeMobileMenu}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-base font-medium transition-all duration-fast ${
                     isActivePath(item.path)
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-text-secondary hover:text-foreground hover:bg-muted'
+                      ? "bg-primary text-primary-foreground"
+                      : "text-text-secondary hover:text-foreground hover:bg-muted"
                   }`}
                 >
                   <Icon name={item.icon} size={20} strokeWidth={2} />
@@ -197,18 +181,21 @@ const Header = ({ className = '' }: HeaderProps) => {
               </span>
             </div>
             <Button
+              asChild
               variant="outline"
               size="default"
               fullWidth
               iconName="Download"
               iconPosition="left"
               iconSize={18}
-              onClick={() => {
-                window.open('/assets/cv.pdf', '_blank');
-                closeMobileMenu();
-              }}
             >
-              Download CV
+              <a
+                href="/public/Resume.pdf"
+                download="Resume.pdf"
+                onClick={closeMobileMenu}
+              >
+                Download CV
+              </a>
             </Button>
             <Button
               variant="default"
@@ -218,7 +205,7 @@ const Header = ({ className = '' }: HeaderProps) => {
               iconPosition="left"
               iconSize={18}
               onClick={() => {
-                window.location.href = '/contact';
+                window.location.href = "/contact";
                 closeMobileMenu();
               }}
             >

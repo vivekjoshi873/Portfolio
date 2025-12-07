@@ -17,12 +17,12 @@ const About = () => {
   }, []);
 
   const personalInfo: PersonalInfo = {
-    name: "Vivek Kumar",
+    name: "Vivek Joshi",
     title: "Frontend Developer | React Specialist",
     location: "Delhi, India",
     experience: "4 Months Professional Experience",
     avatar: "https://img.rocket.new/generatedImages/rocket_gen_img_169150dae-1763301927448.png",
-    alt: "Professional headshot of Vivek Kumar, young male developer in casual business attire with confident smile",
+    alt: "Professional headshot of Vivek Joshi, young male developer in casual business attire with confident smile",
     bio: "I'm a passionate frontend developer with 4 months of real-world experience building production-ready React applications. My journey into web development began with a fascination for creating beautiful, intuitive user interfaces that solve real problems. I believe that great code is not just about functionality—it's about crafting experiences that users love to interact with.",
     philosophy: "As a Digital Craftsman, I approach every project with meticulous attention to detail and a commitment to excellence. I don't just write code; I sculpt user experiences that are both technically sound and visually appealing. My philosophy centers on continuous learning, clean code practices, and the belief that every line of code should serve a purpose in creating delightful user experiences.",
     approach: "My development approach combines technical precision with creative problem-solving. I start by deeply understanding user needs, then translate complex requirements into elegant, maintainable solutions. I'm committed to writing clean, well-documented code that follows industry best practices, and I'm always eager to learn new technologies and methodologies that can improve my craft."

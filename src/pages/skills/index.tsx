@@ -1,25 +1,25 @@
-import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
-import Header from '../../components/ui/Header';
-import Icon from '../../components/AppIcon';
-import Button from '../../components/ui/Button';
-import SkillCard from './components/SkillCard';
-import CategoryFilter from './components/CategoryFilter';
-import GitHubActivity from './components/GitHubActivity';
-import CodeSnippetCard from './components/CodeSnippetCard';
-import LearningPathCard from './components/LearningPathCard';
-import TechInsightCard from './components/TechInsightCard';
-import SkillsOverview from './components/SkillsOverview';
+import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
+import Header from "../../components/ui/Header";
+import Icon from "../../components/AppIcon";
+import Button from "../../components/ui/Button";
+import SkillCard from "./components/SkillCard";
+import CategoryFilter from "./components/CategoryFilter";
+import GitHubActivity from "./components/GitHubActivity";
+import CodeSnippetCard from "./components/CodeSnippetCard";
+import LearningPathCard from "./components/LearningPathCard";
+import TechInsightCard from "./components/TechInsightCard";
+import SkillsOverview from "./components/SkillsOverview";
 import type {
   SkillCategory,
   GitHubContribution,
   CodeSnippet,
   LearningPath,
   TechInsight,
-} from './types';
+} from "./types";
 
 const SkillsPage = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState("all");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,227 +28,227 @@ const SkillsPage = () => {
 
   const skillCategories: SkillCategory[] = [
     {
-      id: 'frontend',
-      name: 'Frontend Development',
-      icon: 'Layout',
-      color: '#2563EB',
-      description: 'Modern UI/UX development with React ecosystem',
+      id: "frontend",
+      name: "Frontend Development",
+      icon: "Layout",
+      color: "#2563EB",
+      description: "Modern UI/UX development with React ecosystem",
       skills: [
         {
-          id: 'react',
-          name: 'React 18',
-          category: 'frontend',
+          id: "react",
+          name: "React 18",
+          category: "frontend",
           proficiency: 90,
-          yearsOfExperience: '4 months',
+          yearsOfExperience: "4 months",
           description:
-            'Building production-ready applications with functional components, hooks, and modern patterns',
-          icon: 'Component',
-          color: '#2563EB',
+            "Building production-ready applications with functional components, hooks, and modern patterns",
+          icon: "Component",
+          color: "#2563EB",
           projects: 8,
           isCore: true,
         },
         {
-          id: 'typescript',
-          name: 'TypeScript',
-          category: 'frontend',
+          id: "typescript",
+          name: "TypeScript",
+          category: "frontend",
           proficiency: 85,
-          yearsOfExperience: '4 months',
+          yearsOfExperience: "4 months",
           description:
-            'Type-safe development with interfaces, generics, and advanced TypeScript features',
-          icon: 'FileCode',
-          color: '#3178C6',
+            "Type-safe development with interfaces, generics, and advanced TypeScript features",
+          icon: "FileCode",
+          color: "#3178C6",
           projects: 8,
           isCore: true,
         },
         {
-          id: 'nextjs',
-          name: 'Next.js 13',
-          category: 'frontend',
+          id: "nextjs",
+          name: "Next.js 13",
+          category: "frontend",
           proficiency: 80,
-          yearsOfExperience: '3 months',
+          yearsOfExperience: "3 months",
           description:
-            'Server-side rendering, app router, and performance optimization with Next.js',
-          icon: 'Zap',
-          color: '#000000',
+            "Server-side rendering, app router, and performance optimization with Next.js",
+          icon: "Zap",
+          color: "#000000",
           projects: 5,
           isCore: true,
         },
         {
-          id: 'tailwind',
-          name: 'Tailwind CSS',
-          category: 'frontend',
+          id: "tailwind",
+          name: "Tailwind CSS",
+          category: "frontend",
           proficiency: 95,
-          yearsOfExperience: '4 months',
+          yearsOfExperience: "4 months",
           description:
-            'Utility-first CSS framework for rapid UI development and responsive design',
-          icon: 'Palette',
-          color: '#06B6D4',
+            "Utility-first CSS framework for rapid UI development and responsive design",
+          icon: "Palette",
+          color: "#06B6D4",
           projects: 10,
           isCore: true,
         },
       ],
     },
     {
-      id: 'animation',
-      name: 'Animation & Motion',
-      icon: 'Sparkles',
-      color: '#10B981',
-      description: 'Creating engaging user experiences with smooth animations',
+      id: "animation",
+      name: "Animation & Motion",
+      icon: "Sparkles",
+      color: "#10B981",
+      description: "Creating engaging user experiences with smooth animations",
       skills: [
         {
-          id: 'framer',
-          name: 'Framer Motion',
-          category: 'animation',
+          id: "framer",
+          name: "Framer Motion",
+          category: "animation",
           proficiency: 85,
-          yearsOfExperience: '3 months',
+          yearsOfExperience: "3 months",
           description:
-            'Advanced animations, gestures, and page transitions with Framer Motion',
-          icon: 'Sparkles',
-          color: '#10B981',
+            "Advanced animations, gestures, and page transitions with Framer Motion",
+          icon: "Sparkles",
+          color: "#10B981",
           projects: 6,
           isCore: true,
         },
         {
-          id: 'css-animations',
-          name: 'CSS Animations',
-          category: 'animation',
+          id: "css-animations",
+          name: "CSS Animations",
+          category: "animation",
           proficiency: 90,
-          yearsOfExperience: '4 months',
+          yearsOfExperience: "4 months",
           description:
-            'Custom keyframe animations, transitions, and transform effects',
-          icon: 'Wand2',
-          color: '#8B5CF6',
+            "Custom keyframe animations, transitions, and transform effects",
+          icon: "Wand2",
+          color: "#8B5CF6",
           projects: 8,
           isCore: false,
         },
       ],
     },
     {
-      id: 'state',
-      name: 'State Management',
-      icon: 'Database',
-      color: '#F59E0B',
-      description: 'Managing application state efficiently',
+      id: "state",
+      name: "State Management",
+      icon: "Database",
+      color: "#F59E0B",
+      description: "Managing application state efficiently",
       skills: [
         {
-          id: 'redux',
-          name: 'Redux Toolkit',
-          category: 'state',
+          id: "redux",
+          name: "Redux Toolkit",
+          category: "state",
           proficiency: 75,
-          yearsOfExperience: '2 months',
+          yearsOfExperience: "2 months",
           description:
-            'Global state management with Redux Toolkit and RTK Query',
-          icon: 'Database',
-          color: '#764ABC',
+            "Global state management with Redux Toolkit and RTK Query",
+          icon: "Database",
+          color: "#764ABC",
           projects: 3,
           isCore: false,
         },
         {
-          id: 'context',
-          name: 'React Context',
-          category: 'state',
+          id: "context",
+          name: "React Context",
+          category: "state",
           proficiency: 85,
-          yearsOfExperience: '4 months',
+          yearsOfExperience: "4 months",
           description:
-            'Component state management with Context API and custom hooks',
-          icon: 'GitBranch',
-          color: '#F59E0B',
+            "Component state management with Context API and custom hooks",
+          icon: "GitBranch",
+          color: "#F59E0B",
           projects: 7,
           isCore: false,
         },
       ],
     },
     {
-      id: 'tools',
-      name: 'Development Tools',
-      icon: 'Wrench',
-      color: '#EF4444',
-      description: 'Modern development workflow and tooling',
+      id: "tools",
+      name: "Development Tools",
+      icon: "Wrench",
+      color: "#EF4444",
+      description: "Modern development workflow and tooling",
       skills: [
         {
-          id: 'git',
-          name: 'Git & GitHub',
-          category: 'tools',
+          id: "git",
+          name: "Git & GitHub",
+          category: "tools",
           proficiency: 80,
-          yearsOfExperience: '4 months',
+          yearsOfExperience: "4 months",
           description:
-            'Version control, branching strategies, and collaborative development',
-          icon: 'GitBranch',
-          color: '#F05032',
+            "Version control, branching strategies, and collaborative development",
+          icon: "GitBranch",
+          color: "#F05032",
           projects: 10,
           isCore: true,
         },
         {
-          id: 'vite',
-          name: 'Vite',
-          category: 'tools',
+          id: "vite",
+          name: "Vite",
+          category: "tools",
           proficiency: 85,
-          yearsOfExperience: '4 months',
+          yearsOfExperience: "4 months",
           description:
-            'Fast build tool with hot module replacement and optimized bundling',
-          icon: 'Zap',
-          color: '#646CFF',
+            "Fast build tool with hot module replacement and optimized bundling",
+          icon: "Zap",
+          color: "#646CFF",
           projects: 8,
           isCore: false,
         },
         {
-          id: 'npm',
-          name: 'NPM/Yarn',
-          category: 'tools',
+          id: "npm",
+          name: "NPM/Yarn",
+          category: "tools",
           proficiency: 80,
-          yearsOfExperience: '4 months',
+          yearsOfExperience: "4 months",
           description:
-            'Package management, dependency resolution, and script automation',
-          icon: 'Package',
-          color: '#CB3837',
+            "Package management, dependency resolution, and script automation",
+          icon: "Package",
+          color: "#CB3837",
           projects: 10,
           isCore: false,
         },
       ],
     },
     {
-      id: 'performance',
-      name: 'Performance & SEO',
-      icon: 'Gauge',
-      color: '#8B5CF6',
-      description: 'Optimizing applications for speed and search engines',
+      id: "performance",
+      name: "Performance & SEO",
+      icon: "Gauge",
+      color: "#8B5CF6",
+      description: "Optimizing applications for speed and search engines",
       skills: [
         {
-          id: 'optimization',
-          name: 'Performance Optimization',
-          category: 'performance',
+          id: "optimization",
+          name: "Performance Optimization",
+          category: "performance",
           proficiency: 75,
-          yearsOfExperience: '3 months',
+          yearsOfExperience: "3 months",
           description:
-            'Code splitting, lazy loading, and bundle size optimization',
-          icon: 'Gauge',
-          color: '#8B5CF6',
+            "Code splitting, lazy loading, and bundle size optimization",
+          icon: "Gauge",
+          color: "#8B5CF6",
           projects: 5,
           isCore: false,
         },
         {
-          id: 'seo',
-          name: 'SEO Best Practices',
-          category: 'performance',
+          id: "seo",
+          name: "SEO Best Practices",
+          category: "performance",
           proficiency: 70,
-          yearsOfExperience: '2 months',
+          yearsOfExperience: "2 months",
           description:
-            'Meta tags, structured data, and search engine optimization',
-          icon: 'Search',
-          color: '#10B981',
+            "Meta tags, structured data, and search engine optimization",
+          icon: "Search",
+          color: "#10B981",
           projects: 4,
           isCore: false,
         },
         {
-          id: 'accessibility',
-          name: 'Web Accessibility',
-          category: 'performance',
+          id: "accessibility",
+          name: "Web Accessibility",
+          category: "performance",
           proficiency: 80,
-          yearsOfExperience: '3 months',
+          yearsOfExperience: "3 months",
           description:
-            'WCAG compliance, ARIA labels, and inclusive design patterns',
-          icon: 'Eye',
-          color: '#F59E0B',
+            "WCAG compliance, ARIA labels, and inclusive design patterns",
+          icon: "Eye",
+          color: "#F59E0B",
           projects: 6,
           isCore: false,
         },
@@ -263,7 +263,7 @@ const SkillsPage = () => {
       date.setDate(date.getDate() - (364 - i));
       const count = Math.floor(Math.random() * 10);
       return {
-        date: date.toISOString().split('T')[0],
+        date: date.toISOString().split("T")[0],
         count,
         level: count === 0 ? 0 : Math.min(Math.floor(count / 2) + 1, 4),
       };
@@ -272,110 +272,110 @@ const SkillsPage = () => {
 
   const codeSnippets: CodeSnippet[] = [
     {
-      id: 'snippet1',
-      title: 'Custom React Hook for API Calls',
-      language: 'TypeScript',
+      id: "snippet1",
+      title: "Custom React Hook for API Calls",
+      language: "TypeScript",
       code: `import { useState, useEffect } from 'react'
 ;\n\ninterface UseApiResult<T> {\n  data: T | null;\n  loading: boolean;\n  error: Error | null;\n}\n\nfunction useApi<T>(url: string): UseApiResult<T> {\n  const [data, setData] = useState<T | null>(null);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState<Error | null>(null);\n\n  useEffect(() => {\n    fetch(url)\n      .then(res => res.json())\n      .then(setData)\n      .catch(setError)\n      .finally(() => setLoading(false));\n  }, [url]);\n\n  return { data, loading, error };\n}`,
       description:
-        'Reusable custom hook for handling API requests with TypeScript generics',
-      category: 'React Hooks',
+        "Reusable custom hook for handling API requests with TypeScript generics",
+      category: "React Hooks",
     },
     {
-      id: 'snippet2',
-      title: 'Framer Motion Page Transition',
-      language: 'TypeScript',
+      id: "snippet2",
+      title: "Framer Motion Page Transition",
+      language: "TypeScript",
       code: `import { motion } from 'framer-motion'
 ;\n\nconst pageVariants = {\n  initial: { opacity: 0, y: 20 },\n  animate: { \n    opacity: 1, \n    y: 0,\n    transition: { duration: 0.5 }\n  },\n  exit: { \n    opacity: 0, \n    y: -20,\n    transition: { duration: 0.3 }\n  }\n};\n\nconst PageTransition = ({ children }) => (\n  <motion.div\n    variants={pageVariants}\n    initial="initial"\n    animate="animate"\n    exit="exit"\n  >\n    {children}\n  </motion.div>\n);`,
       description:
-        'Smooth page transitions using Framer Motion with custom variants',
-      category: 'Animation',
+        "Smooth page transitions using Framer Motion with custom variants",
+      category: "Animation",
     },
     {
-      id: 'snippet3',
-      title: 'Responsive Tailwind Grid Layout',
-      language: 'TypeScript',
+      id: "snippet3",
+      title: "Responsive Tailwind Grid Layout",
+      language: "TypeScript",
       code: `const ResponsiveGrid = ({ items }) => (\n  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">\n    {items.map((item) => (\n      <div \n        key={item.id}\n        className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300"\n      >\n        <h3 className="text-lg font-semibold mb-2">\n          {item.title}\n        </h3>\n        <p className="text-gray-600">\n          {item.description}\n        </p>\n      </div>\n    ))}\n  </div>\n);`,
       description:
-        'Responsive grid layout with Tailwind CSS breakpoints and hover effects',
-      category: 'Styling',
+        "Responsive grid layout with Tailwind CSS breakpoints and hover effects",
+      category: "Styling",
     },
   ];
 
   const learningPaths: LearningPath[] = [
     {
-      id: 'path1',
-      skill: 'Advanced React Patterns',
+      id: "path1",
+      skill: "Advanced React Patterns",
       currentLevel: 7,
       targetLevel: 10,
       resources: [
-        'React Advanced Patterns Course',
-        'Compound Components Documentation',
-        'Render Props & HOC Best Practices',
+        "React Advanced Patterns Course",
+        "Compound Components Documentation",
+        "Render Props & HOC Best Practices",
       ],
-      timeline: '2 months',
-      status: 'in-progress',
+      timeline: "2 months",
+      status: "in-progress",
     },
     {
-      id: 'path2',
-      skill: 'Testing with Jest & React Testing Library',
+      id: "path2",
+      skill: "Testing with Jest & React Testing Library",
       currentLevel: 5,
       targetLevel: 10,
       resources: [
-        'Testing JavaScript Course',
-        'React Testing Library Documentation',
-        'TDD Best Practices Guide',
+        "Testing JavaScript Course",
+        "React Testing Library Documentation",
+        "TDD Best Practices Guide",
       ],
-      timeline: '3 months',
-      status: 'in-progress',
+      timeline: "3 months",
+      status: "in-progress",
     },
     {
-      id: 'path3',
-      skill: 'GraphQL & Apollo Client',
+      id: "path3",
+      skill: "GraphQL & Apollo Client",
       currentLevel: 3,
       targetLevel: 10,
       resources: [
-        'GraphQL Fundamentals',
-        'Apollo Client Documentation',
-        'Building GraphQL APIs',
+        "GraphQL Fundamentals",
+        "Apollo Client Documentation",
+        "Building GraphQL APIs",
       ],
-      timeline: '4 months',
-      status: 'planned',
+      timeline: "4 months",
+      status: "planned",
     },
   ];
 
   const techInsights: TechInsight[] = [
     {
-      id: 'insight1',
-      title: 'React 18 Concurrent Features Transform User Experience',
-      category: 'React Ecosystem',
-      date: 'December 2024',
+      id: "insight1",
+      title: "React 18 Concurrent Features Transform User Experience",
+      category: "React Ecosystem",
+      date: "December 2024",
       summary:
-        'React 18 introduces concurrent rendering capabilities that allow applications to remain responsive during heavy computations. Features like useTransition and useDeferredValue enable developers to prioritize user interactions while managing background updates efficiently.',
-      tags: ['React18', 'Performance', 'Concurrent', 'UX'],
+        "React 18 introduces concurrent rendering capabilities that allow applications to remain responsive during heavy computations. Features like useTransition and useDeferredValue enable developers to prioritize user interactions while managing background updates efficiently.",
+      tags: ["React18", "Performance", "Concurrent", "UX"],
     },
     {
-      id: 'insight2',
-      title: 'The Rise of Server Components in Next.js 13',
-      category: 'Next.js',
-      date: 'November 2024',
+      id: "insight2",
+      title: "The Rise of Server Components in Next.js 13",
+      category: "Next.js",
+      date: "November 2024",
       summary:
-        'Next.js 13 App Router introduces React Server Components, fundamentally changing how we build web applications. Server Components reduce bundle sizes, improve initial page load times, and enable seamless data fetching patterns without client-side overhead.',
-      tags: ['NextJS', 'ServerComponents', 'Performance', 'Architecture'],
+        "Next.js 13 App Router introduces React Server Components, fundamentally changing how we build web applications. Server Components reduce bundle sizes, improve initial page load times, and enable seamless data fetching patterns without client-side overhead.",
+      tags: ["NextJS", "ServerComponents", "Performance", "Architecture"],
     },
     {
-      id: 'insight3',
-      title: 'Tailwind CSS 4.0: The Future of Utility-First Styling',
-      category: 'CSS & Styling',
-      date: 'December 2024',
+      id: "insight3",
+      title: "Tailwind CSS 4.0: The Future of Utility-First Styling",
+      category: "CSS & Styling",
+      date: "December 2024",
       summary:
-        'Tailwind CSS continues to evolve with improved performance, better developer experience, and new utility classes. The framework maintains its position as the go-to solution for rapid UI development while addressing common pain points in large-scale applications.',
-      tags: ['TailwindCSS', 'Styling', 'DX', 'Performance'],
+        "Tailwind CSS continues to evolve with improved performance, better developer experience, and new utility classes. The framework maintains its position as the go-to solution for rapid UI development while addressing common pain points in large-scale applications.",
+      tags: ["TailwindCSS", "Styling", "DX", "Performance"],
     },
   ];
 
   const filteredSkills =
-    activeCategory === 'all'
+    activeCategory === "all"
       ? skillCategories.flatMap((cat) => cat.skills)
       : skillCategories.find((cat) => cat.id === activeCategory)?.skills || [];
 
@@ -399,10 +399,12 @@ const SkillsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Technical Skills & Expertise | Vivek Kumar - React Developer</title>
+        <title>
+          Technical Skills & Expertise | Vivek Joshi - React Developer
+        </title>
         <meta
           name="description"
-          content="Explore Vivek Kumar's technical skills including React 18, TypeScript, Next.js, Framer Motion, and modern frontend development expertise with 4 months of professional experience."
+          content="Explore Vivek Joshi's technical skills including React 18, TypeScript, Next.js, Framer Motion, and modern frontend development expertise with 4 months of professional experience."
         />
       </Helmet>
 
@@ -414,7 +416,8 @@ const SkillsPage = () => {
             <div
               className={`max-w-7xl mx-auto transition-all duration-slow ${
                 isVisible
-                  ? 'opacity-100 translate-y-0' :'opacity-0 translate-y-8'
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               }`}
             >
               <div className="text-center mb-12">
@@ -451,16 +454,6 @@ const SkillsPage = () => {
                   <h2 className="text-2xl font-bold text-foreground font-headline">
                     Technical Skills
                   </h2>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    iconName="Download"
-                    iconPosition="left"
-                    iconSize={16}
-                    onClick={() => window.open('/assets/cv.pdf', '_blank')}
-                  >
-                    Download CV
-                  </Button>
                 </div>
 
                 <CategoryFilter
@@ -542,7 +535,8 @@ const SkillsPage = () => {
                   Ready to Collaborate?
                 </h2>
                 <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
-                  I'm passionate about building exceptional user experiences and continuously expanding my technical expertise. Let's create
+                  I'm passionate about building exceptional user experiences and
+                  continuously expanding my technical expertise. Let's create
                   something amazing together.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
@@ -552,7 +546,7 @@ const SkillsPage = () => {
                     iconName="Mail"
                     iconPosition="left"
                     iconSize={18}
-                    onClick={() => (window.location.href = '/contact')}
+                    onClick={() => (window.location.href = "/contact")}
                   >
                     Get in Touch
                   </Button>
@@ -563,7 +557,7 @@ const SkillsPage = () => {
                     iconPosition="left"
                     iconSize={18}
                     onClick={() =>
-                      window.open('https://github.com/vivek-kumar', '_blank')
+                      window.open("https://github.com/vivek-kumar", "_blank")
                     }
                   >
                     View GitHub
@@ -578,7 +572,7 @@ const SkillsPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
               <div className="text-sm text-text-secondary">
-                © {new Date().getFullYear()} Vivek Kumar. All rights reserved.
+                © {new Date().getFullYear()} Vivek Joshi. All rights reserved.
               </div>
               <div className="flex items-center space-x-6">
                 <a

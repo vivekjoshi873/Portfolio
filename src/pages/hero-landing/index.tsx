@@ -24,7 +24,7 @@ const HeroLanding = () => {
 
   const heroContent: HeroContentType = {
     greeting: "Hi, I'm",
-    name: 'Vivek Kumar',
+    name: 'Vivek Joshi',
     title: 'Frontend Developer & React Specialist',
     description:
       'Crafting exceptional user experiences with React, TypeScript, and modern web technologies. Passionate about clean code, performance optimization, and creating interfaces that users love.',
@@ -216,7 +216,7 @@ import Routes from '../../Routes';
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
             <p className="text-sm text-text-secondary">
-              © {new Date().getFullYear()} Vivek Kumar. All rights reserved.
+              © {new Date().getFullYear()} Vivek Joshi. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
               <a
