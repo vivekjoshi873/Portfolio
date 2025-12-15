@@ -5,6 +5,7 @@ import { fadeInUp, buttonHover, buttonTap } from "@/lib/animations";
 import { ArrowDown, Mail, Sparkles } from "lucide-react";
 import { MagneticButton } from "./MagneticButton";
 import { useEffect, useState } from "react";
+import { SparklesCore } from "../components/ui/sparkles";
 
 export function Hero() {
   const mouseX = useMotionValue(0);
@@ -45,7 +46,6 @@ export function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
-      {/* Floating elements */}
       <motion.div
         style={{ x: useTransform(smoothMouseX, [0, 100], [0, 20]), y: useTransform(smoothMouseY, [0, 100], [0, 20]) }}
         className="absolute top-1/4 left-[10%] w-72 h-72 bg-linear-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"
@@ -78,10 +78,12 @@ export function Hero() {
             variants={fadeInUp}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/50 backdrop-blur-sm border border-border/50 mb-6"
           >
+            
             <Sparkles className="w-3 h-3" />
             <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-medium">
               Frontend Developer
             </span>
+            
           </motion.div>
           
           <motion.h1
@@ -89,7 +91,7 @@ export function Hero() {
             className="text-6xl md:text-8xl font-light tracking-tight mb-6 bg-linear-to-br from-foreground via-foreground to-foreground/40 bg-clip-text text-transparent"
             style={{ lineHeight: 1.1 }}
           >
-            Alex Chen
+            Vivek Joshi
           </motion.h1>
           
           <motion.p
@@ -112,7 +114,6 @@ export function Hero() {
               View Projects
               <ArrowDown className="w-4 h-4" />
             </MagneticButton>
-            
             <MagneticButton
               href="#contact"
               className="inline-flex items-center justify-center gap-2 px-10 py-5 border-2 border-border/50 rounded-full font-medium transition-all hover:bg-accent/50 backdrop-blur-sm"
@@ -133,7 +134,6 @@ export function Hero() {
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ArrowDown className="w-5 h-5 text-muted-foreground/50" />
           </motion.div>
         </motion.div>
       </motion.div>

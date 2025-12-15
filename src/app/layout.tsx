@@ -12,7 +12,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Chen | Frontend Developer",
+  title: "Vivek Joshi | Frontend Developer",
   description: "Frontend Developer specializing in React, Next.js, and modern web development. Creating elegant, performant user interfaces with thoughtful motion design.",
 };
 

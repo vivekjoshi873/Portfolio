@@ -6,9 +6,9 @@ import { useInView } from "react-intersection-observer";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 const socials = [
-  { name: "GitHub", icon: Github, href: "https://github.com" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
+  { name: "GitHub", icon: Github, href: "https://github.com/vivekjoshi873" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/vivek-joshi-78b227274/" },
+  { name: "Twitter", icon: Twitter, href: "https://x.com/Vivek2005Joshi" },
 ];
 
 export function Footer() {
@@ -24,7 +24,7 @@ export function Footer() {
         className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6"
       >
         <div className="text-center sm:text-left">
-          <p className="font-medium">Alex Chen</p>
+          <p className="font-medium">Vivek Joshi</p>
           <p className="text-sm text-muted-foreground mt-1">
             Frontend Developer
           </p>

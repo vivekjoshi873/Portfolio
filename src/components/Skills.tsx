@@ -98,7 +98,7 @@ export function Skills() {
                         <div className="flex flex-col items-center gap-3">
                           <div className="relative">
                             <Icon
-                              className="w-12 h-12 transition-all duration-300"
+                              className="w-10 h-10 transition-all duration-300"
                               style={{
                                 color: tech.color,
                                 filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.1))",

@@ -6,14 +6,13 @@ import { useInView } from "react-intersection-observer";
 import { Mail, Github, Linkedin, Twitter } from "lucide-react";
 
 const socials = [
-  { name: "GitHub", icon: Github, href: "https://github.com" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
+  { name: "GitHub", icon: Github, href: "https://github.com/vivekjoshi873" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/vivek-joshi-78b227274/" },
+  { name: "Twitter", icon: Twitter, href: "https://x.com/Vivek2005Joshi" },
 ];
 
 export function Contact() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
   return (
     <section id="contact" className="py-32 px-6 bg-accent/30">
       <div className="max-w-3xl mx-auto text-center">
@@ -52,11 +51,11 @@ export function Contact() {
 
           <motion.div variants={fadeInUp} className="mb-8">
             <a
-              href="mailto:hello@alexchen.dev"
+              href="mailto:vivekjo.dev@gmail.com"
               className="inline-flex items-center gap-3 text-2xl font-medium hover:text-foreground/70 transition-colors"
             >
               <Mail className="w-6 h-6" />
-              hello@alexchen.dev
+              vivekjo.dev@gmail.com
             </a>
           </motion.div>
           

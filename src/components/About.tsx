@@ -60,16 +60,12 @@ export function About() {
             className="pt-4 flex gap-8 text-sm"
           >
             <div>
-              <p className="text-3xl font-light">3+</p>
-              <p className="text-muted-foreground mt-1">Years Experience</p>
+              <p className="text-3xl font-light">3</p>
+              <p className="text-muted-foreground mt-1">Months Experience</p>
             </div>
             <div>
-              <p className="text-3xl font-light">20+</p>
+              <p className="text-3xl font-light">20</p>
               <p className="text-muted-foreground mt-1">Projects Completed</p>
-            </div>
-            <div>
-              <p className="text-3xl font-light">10+</p>
-              <p className="text-muted-foreground mt-1">Happy Clients</p>
             </div>
           </motion.div>
         </motion.div>

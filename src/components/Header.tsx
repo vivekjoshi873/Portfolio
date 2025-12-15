@@ -42,7 +42,7 @@ export function Header() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          AC
+          VJ
         </motion.a>
 
         <ul className="hidden sm:flex items-center gap-8">
@@ -76,12 +76,13 @@ export function Header() {
           </motion.button>
 
           <motion.a
-            href="#contact"
+            href="/Vivek Resume.pdf"
+            download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-5 py-2 text-sm font-medium bg-foreground text-background rounded-full hover:bg-foreground/90 transition-colors"
           >
-            Hire Me
+            Download CV
           </motion.a>
         </div>
       </nav>

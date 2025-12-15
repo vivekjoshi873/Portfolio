@@ -15,7 +15,6 @@ export function MagneticButton({ children, className = "", href, onClick }: Magn
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const rectRef = useRef<DOMRect | null>(null);
 
-  // Cache rect on mount and resize
   useEffect(() => {
     if (!ref.current) return;
     rectRef.current = ref.current.getBoundingClientRect();
@@ -48,7 +47,6 @@ export function MagneticButton({ children, className = "", href, onClick }: Magn
       <Component
         href={href}
         onClick={onClick}
-        animate={{ x: position.x, y: position.y }}
         transition={{ type: "spring", stiffness: 200, damping: 20, mass: 0.1 }}
         className={className}
       >
