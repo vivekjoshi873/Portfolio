@@ -5,7 +5,6 @@ import { fadeInUp, buttonHover, buttonTap } from "@/lib/animations";
 import { ArrowDown, Mail, Sparkles } from "lucide-react";
 import { MagneticButton } from "./MagneticButton";
 import { useEffect, useState } from "react";
-import { SparklesCore } from "../components/ui/sparkles";
 
 export function Hero() {
   const mouseX = useMotionValue(0);

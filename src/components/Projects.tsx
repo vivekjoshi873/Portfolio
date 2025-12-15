@@ -1,46 +1,63 @@
+"use client";
+
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const projects = [
   {
-    title: "E-Commerce Dashboard",
-    description: "A modern admin dashboard with real-time analytics, inventory management, and order tracking.",
-    tech: ["Next.js", "TypeScript", "Tailwind", "Recharts"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-    demo: "#",
-    github: "#",
+    title: "AI Notes",
+    description: "A modern AI notes app with real-time analytics, inventory management, and order tracking.",
+    tech: ["Next.js","React", "TypeScript", "Tailwind", "Zustand", "React-markdown", "Shadcn"],
+    image: "/ainotes.png",
+    demo: "https://ainotes.vercel.app/",
+    github: "https://github.com/vivekjoshi873/Ai-notes",
     priority: true,
   },
   {
-    title: "Task Management App",
-    description: "Collaborative task management tool with drag-and-drop, real-time updates, and team features.",
-    tech: ["React", "Redux", "Node.js", "Socket.io"],
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop",
-    demo: "#",
-    github: "#",
+    title: "Crypto Tracker",
+    description: "A crypto tracker with real-time updates and price tracking.",
+    tech: ["Next.js", "React", "Tailwind", "Zustand","Shadcn","Recharts","TanStack Query","Framer Motion","Jest","Playwright","CoinGecko API"],
+    image: "/crypto.png",
+    demo: "https://crypto-tracker.vercel.app/",
+    github: "https://github.com/vivekjoshi873/Crypto",
+    priority: true,
   },
   {
-    title: "Weather Application",
-    description: "Beautiful weather app with location detection, 7-day forecasts, and animated weather icons.",
-    tech: ["Next.js", "OpenWeather API", "Framer Motion"],
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=500&fit=crop",
-    demo: "#",
-    github: "#",
+    title: "E-Commerce Dashboard",
+    description: "A modern e-commerce dashboard with real-time analytics, inventory management, and order tracking.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind", "Zustand", "Three.js", "Shadcn", "FakeStoreAPI"],
+    image: "/ecommerce.png",
+    demo: "https://luxe-ecommerce-store.vercel.app/",
+    github: "https://github.com/vivekjoshi873/Luxe-ecommerce-store",
   },
   {
-    title: "Portfolio Generator",
-    description: "A tool that helps developers create stunning portfolios with customizable themes and layouts.",
-    tech: ["React", "Tailwind CSS", "Firebase"],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop",
-    demo: "#",
-    github: "#",
+    title: "SaaS Dashboard",
+    description: "A modern SaaS dashboard with real-time analytics, inventory management, and order tracking.",
+    tech: ["Reactjs", "Tailwind", "Zustand","React-Router","Context API"],
+    image: "/saas.png",
+    demo: "https://saas-application-tau.vercel.app/",
+    github: "https://github.com/vivekjoshi873/SaaS-Application",
   },
 ];
 
-function ProjectCard({ project }: { project: typeof projects[0] }) {
+function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+
   return (
-    <div className="group relative bg-card rounded-2xl overflow-hidden border border-border/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div className="relative h-56 overflow-hidden">
+    <motion.div
+      ref={ref as any}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="group relative bg-card rounded-2xl overflow-hidden border border-border/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+    >
+      <div className="relative h-80 overflow-hidden">
         <Image
           src={project.image}
           alt={project.title}
@@ -50,8 +67,6 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           priority={project.priority}
           loading={project.priority ? "eager" : "lazy"}
         />
-        <div className="absolute inset-0 bg-linear-to-t from-card via-card/60 to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-br from-blue-500/15 via-purple-500/15 to-pink-500/15 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </div>
 
       <div className="p-6">
@@ -64,9 +79,9 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         </p>
 
         <div className="flex flex-wrap gap-2 mb-5">
-          {project.tech.map((tech) => (
+          {project.tech.map((tech, techIndex) => (
             <span
-              key={tech}
+              key={`${tech}-${techIndex}`}
               className="px-3 py-1.5 text-xs bg-accent/50 backdrop-blur-sm rounded-full text-foreground border border-border/30"
             >
               {tech}
@@ -91,15 +106,23 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export function Projects() {
+  const { ref, isVisible } = useScrollAnimation(0.1);
+
   return (
     <section id="projects" className="py-32 px-6 relative">
       <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl mb-16">
+        <motion.div
+          ref={ref as any}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl mb-16"
+        >
           <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 font-medium">
             Projects
           </p>
@@ -109,11 +132,11 @@ export function Projects() {
           <p className="text-muted-foreground text-lg">
             A collection of projects that showcase my skills in frontend development, from concept to deployment.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+          {projects.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
       </div>
