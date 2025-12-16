@@ -98,7 +98,8 @@ export function Hero() {
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-16 leading-relaxed font-light"
           >
             Crafting{" "}
-            <span className="text-foreground font-medium">elegant interfaces</span>{" "}
+            <span className="text-foreground font-medium">
+              elegant interfaces</span>{" "}
             with cutting-edge technology and thoughtful design
           </motion.p>
           

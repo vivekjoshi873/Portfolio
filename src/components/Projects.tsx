@@ -4,6 +4,7 @@ import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Hero } from "../components/ui/animated-hero"
 
 const projects = [
   {
