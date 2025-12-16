@@ -13,7 +13,8 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   title: "Vivek Joshi | Frontend Developer",
-  description: "Frontend Developer specializing in React, Next.js, and modern web development. Creating elegant, performant user interfaces with thoughtful motion design.",
+  description:
+    "Frontend Developer specializing in React, Next.js, and modern web development. Creating elegant, performant user interfaces with thoughtful motion design.",
 };
 
 export default function RootLayout({
@@ -25,9 +26,7 @@ export default function RootLayout({
     <html lang="en" className={sora.variable}>
       <body className={`${sora.className} antialiased`}>
         <ErrorReporter />
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

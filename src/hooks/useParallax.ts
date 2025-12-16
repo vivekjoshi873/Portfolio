@@ -16,4 +16,3 @@ export function useParallax(speed = 0.5) {
 
   return offset;
 }
-

@@ -10,7 +10,12 @@ interface MagneticButtonProps {
   onClick?: () => void;
 }
 
-export function MagneticButton({ children, className = "", href, onClick }: MagneticButtonProps) {
+export function MagneticButton({
+  children,
+  className = "",
+  href,
+  onClick,
+}: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const rectRef = useRef<DOMRect | null>(null);
@@ -25,8 +30,8 @@ export function MagneticButton({ children, className = "", href, onClick }: Magn
       }
     };
 
-    window.addEventListener('resize', handleResize, { passive: true });
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handleMouse = useCallback((e: React.MouseEvent) => {

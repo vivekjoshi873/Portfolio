@@ -7,7 +7,11 @@ import { Mail, Github, Linkedin, Twitter } from "lucide-react";
 
 const socials = [
   { name: "GitHub", icon: Github, href: "https://github.com/vivekjoshi873" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/vivek-joshi-78b227274/" },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/vivek-joshi-78b227274/",
+  },
   { name: "Twitter", icon: Twitter, href: "https://x.com/Vivek2005Joshi" },
 ];
 
@@ -34,14 +38,14 @@ export function Contact() {
           >
             Contact
           </motion.p>
-          
+
           <motion.h2
             variants={fadeInUp}
             className="text-3xl md:text-4xl font-light tracking-tight mb-4"
           >
             Let's work together
           </motion.h2>
-          
+
           <motion.p
             variants={fadeInUp}
             className="text-muted-foreground text-lg mb-12"
@@ -58,7 +62,7 @@ export function Contact() {
               vivekjo.dev@gmail.com
             </a>
           </motion.div>
-          
+
           <motion.div variants={fadeInUp} className="flex justify-center gap-4">
             {socials.map((social) => (
               <motion.a

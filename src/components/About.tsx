@@ -16,7 +16,7 @@ export function About() {
             About
           </p>
         </AnimatedSection>
-        
+
         <motion.div
           ref={ref}
           initial="hidden"
@@ -36,29 +36,28 @@ export function About() {
           >
             Building digital experiences with precision and purpose
           </motion.h2>
-          
+
           <motion.p
             variants={fadeInUp}
             className="text-muted-foreground text-lg leading-relaxed"
           >
-            I'm a frontend developer passionate about creating intuitive, performant web applications. 
-            My journey in development started with a curiosity for how interfaces come to life, 
-            and has evolved into a deep appreciation for clean code and thoughtful user experiences.
+            I'm a frontend developer passionate about creating intuitive,
+            performant web applications. My journey in development started with
+            a curiosity for how interfaces come to life, and has evolved into a
+            deep appreciation for clean code and thoughtful user experiences.
           </motion.p>
-          
+
           <motion.p
             variants={fadeInUp}
             className="text-muted-foreground text-lg leading-relaxed"
           >
-            With expertise in React and Next.js, I specialize in building modern web applications 
-            that are both visually compelling and technically robust. I leverage Tailwind CSS for 
-            rapid, consistent styling and integrate RESTful APIs to create dynamic, data-driven interfaces.
+            With expertise in React and Next.js, I specialize in building modern
+            web applications that are both visually compelling and technically
+            robust. I leverage Tailwind CSS for rapid, consistent styling and
+            integrate RESTful APIs to create dynamic, data-driven interfaces.
           </motion.p>
-          
-          <motion.div
-            variants={fadeInUp}
-            className="pt-4 flex gap-8 text-sm"
-          >
+
+          <motion.div variants={fadeInUp} className="pt-4 flex gap-8 text-sm">
             <div>
               <p className="text-3xl font-light">3</p>
               <p className="text-muted-foreground mt-1">Months Experience</p>

@@ -54,7 +54,7 @@ export function Skills() {
   return (
     <section id="skills" className="relative py-32 px-6 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-b from-accent/20 via-accent/5 to-transparent" />
-      
+
       <div className="relative max-w-6xl mx-auto">
         <motion.div
           initial="hidden"
@@ -69,7 +69,8 @@ export function Skills() {
             Technologies I work with
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Modern tools and frameworks I use to craft exceptional digital experiences
+            Modern tools and frameworks I use to craft exceptional digital
+            experiences
           </p>
         </motion.div>
 
@@ -101,7 +102,8 @@ export function Skills() {
                               className="w-10 h-10 transition-all duration-300"
                               style={{
                                 color: tech.color,
-                                filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.1))",
+                                filter:
+                                  "drop-shadow(0 4px 8px rgba(0,0,0,0.1))",
                               }}
                             />
                             <div
@@ -113,7 +115,7 @@ export function Skills() {
                             {tech.name}
                           </p>
                         </div>
-                        
+
                         <div
                           className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                           style={{

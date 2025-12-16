@@ -7,7 +7,11 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 
 const socials = [
   { name: "GitHub", icon: Github, href: "https://github.com/vivekjoshi873" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/vivek-joshi-78b227274/" },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/vivek-joshi-78b227274/",
+  },
   { name: "Twitter", icon: Twitter, href: "https://x.com/Vivek2005Joshi" },
 ];
 

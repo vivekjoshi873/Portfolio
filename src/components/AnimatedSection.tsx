@@ -11,7 +11,11 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
-export function AnimatedSection({ children, className = "", delay = 0 }: AnimatedSectionProps) {
+export function AnimatedSection({
+  children,
+  className = "",
+  delay = 0,
+}: AnimatedSectionProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -31,7 +35,13 @@ export function AnimatedSection({ children, className = "", delay = 0 }: Animate
   );
 }
 
-export function AnimatedContainer({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function AnimatedContainer({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -50,7 +60,13 @@ export function AnimatedContainer({ children, className = "" }: { children: Reac
   );
 }
 
-export function AnimatedItem({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function AnimatedItem({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
     <motion.div variants={fadeInUp} className={className}>
       {children}

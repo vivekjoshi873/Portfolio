@@ -68,7 +68,7 @@ export function Header() {
             className="p-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
             aria-label="Toggle theme"
           >
-            {theme === 'light' ? (
+            {theme === "light" ? (
               <Moon className="w-4 h-4" />
             ) : (
               <Sun className="w-4 h-4" />

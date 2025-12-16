@@ -73,17 +73,7 @@ export function Hero() {
             },
           }}
         >
-          <motion.div
-            variants={fadeInUp}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/50 backdrop-blur-sm border border-border/50 mb-6"
-          >
-            
-            <Sparkles className="w-3 h-3" />
-            <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-medium">
-              Frontend Developer
-            </span>
-            
-          </motion.div>
+     
           
           <motion.h1
             variants={fadeInUp}

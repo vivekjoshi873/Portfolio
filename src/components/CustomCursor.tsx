@@ -33,8 +33,8 @@ export function CustomCursor() {
       const target = e.target as HTMLElement;
       setIsPointer(
         window.getComputedStyle(target).cursor === "pointer" ||
-        target.tagName === "A" ||
-        target.tagName === "BUTTON"
+          target.tagName === "A" ||
+          target.tagName === "BUTTON"
       );
     };
 

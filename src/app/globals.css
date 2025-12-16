@@ -122,18 +122,18 @@
     @apply bg-background text-foreground;
     cursor: none;
   }
-  
+
   @media (max-width: 768px) {
     body {
       cursor: auto;
     }
   }
-  
+
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
-  
+
   ::selection {
     @apply bg-foreground/10;
   }
@@ -167,4 +167,9 @@
   .backdrop-blur-xl {
     backdrop-filter: blur(24px);
   }
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }

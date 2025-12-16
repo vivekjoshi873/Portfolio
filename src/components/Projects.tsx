@@ -4,13 +4,21 @@ import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Hero } from "../components/ui/animated-hero"
 
 const projects = [
   {
     title: "AI Notes",
-    description: "A modern AI notes app with real-time analytics, inventory management, and order tracking.",
-    tech: ["Next.js","React", "TypeScript", "Tailwind", "Zustand", "React-markdown", "Shadcn"],
+    description:
+      "A modern AI notes app with real-time analytics, inventory management, and order tracking.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Zustand",
+      "React-markdown",
+      "Shadcn",
+    ],
     image: "/ainotes.png",
     demo: "https://ai-notes-tau-lyart.vercel.app/",
     github: "https://github.com/vivekjoshi873/Ai-notes",
@@ -19,7 +27,19 @@ const projects = [
   {
     title: "Crypto Tracker",
     description: "A crypto tracker with real-time updates and price tracking.",
-    tech: ["Next.js", "React", "Tailwind", "Zustand","Shadcn","Recharts","TanStack Query","Framer Motion","Jest","Playwright","CoinGecko API"],
+    tech: [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "Zustand",
+      "Shadcn",
+      "Recharts",
+      "TanStack Query",
+      "Framer Motion",
+      "Jest",
+      "Playwright",
+      "CoinGecko API",
+    ],
     image: "/crypto.png",
     demo: "https://crypto-tracker.vercel.app/",
     github: "https://github.com/vivekjoshi873/Crypto",
@@ -27,23 +47,40 @@ const projects = [
   },
   {
     title: "E-Commerce Dashboard",
-    description: "A modern e-commerce dashboard with real-time analytics, inventory management, and order tracking.",
-    tech: ["Next.js", "React", "TypeScript", "Tailwind", "Zustand", "Three.js", "Shadcn", "FakeStoreAPI"],
+    description:
+      "A modern e-commerce dashboard with real-time analytics, inventory management, and order tracking.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Zustand",
+      "Three.js",
+      "Shadcn",
+      "FakeStoreAPI",
+    ],
     image: "/ecommerce.png",
     demo: "https://luxe-ecommerce-store.vercel.app/",
     github: "https://github.com/vivekjoshi873/Luxe-ecommerce-store",
   },
   {
     title: "SaaS Dashboard",
-    description: "A modern SaaS dashboard with real-time analytics, inventory management, and order tracking.",
-    tech: ["Reactjs", "Tailwind", "Zustand","React-Router","Context API"],
+    description:
+      "A modern SaaS dashboard with real-time analytics, inventory management, and order tracking.",
+    tech: ["Reactjs", "Tailwind", "Zustand", "React-Router", "Context API"],
     image: "/saas.png",
     demo: "https://saas-application-tau.vercel.app/",
     github: "https://github.com/vivekjoshi873/SaaS-Application",
   },
 ];
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+}) {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
@@ -131,7 +168,8 @@ export function Projects() {
             Selected work
           </h2>
           <p className="text-muted-foreground text-lg">
-            A collection of projects that showcase my skills in frontend development, from concept to deployment.
+            A collection of projects that showcase my skills in frontend
+            development, from concept to deployment.
           </p>
         </motion.div>
 
