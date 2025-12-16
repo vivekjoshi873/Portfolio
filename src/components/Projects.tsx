@@ -12,7 +12,7 @@ const projects = [
     description: "A modern AI notes app with real-time analytics, inventory management, and order tracking.",
     tech: ["Next.js","React", "TypeScript", "Tailwind", "Zustand", "React-markdown", "Shadcn"],
     image: "/ainotes.png",
-    demo: "https://ainotes.vercel.app/",
+    demo: "https://ai-notes-tau-lyart.vercel.app/",
     github: "https://github.com/vivekjoshi873/Ai-notes",
     priority: true,
   },
