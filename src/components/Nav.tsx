@@ -1,69 +1,53 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { navItems } from "@/data/resume";
+import Link from "next/link";
+import { personalInfo, navItems } from "@/data/resume";
 
 export default function Nav() {
-  const [activeSection, setActiveSection] = useState("about");
-
-  useEffect(() => {
-    const sectionIds = navItems.map((item) => item.href.replace("#", ""));
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
-
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sectionIds[i]);
-        if (section) {
-          const top = section.offsetTop;
-          if (scrollPosition >= top) {
-            setActiveSection(sectionIds[i]);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <nav className="nav hidden lg:block" aria-label="In-page jump links">
-      <ul className="mt-12 w-max space-y-4">
-        {navItems.map((item) => {
-          const id = item.href.replace("#", "");
-          const isActive = activeSection === id;
+    <header className="sticky top-0 z-50 border-b border-[#15181f] bg-[#08090b]/85 backdrop-blur-md transition-colors">
+      <div className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between gap-4 px-5 sm:px-8">
+        {/* Brand identity */}
+        <Link
+          href="/"
+          className="group flex shrink-0 items-center gap-2.5 transition-colors"
+          aria-label={`${personalInfo.name} — Home`}
+        >
+          <span className="font-mono text-[13px] font-medium tracking-[0.18em] text-[#f5f5f5] group-hover:text-purple-300">
+            VIVEK JOSHI
+          </span>
+          <span aria-hidden="true" className="h-3.5 w-px bg-[#1f2937]" />
+          <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-purple-400">
+            Front-End
+          </span>
+        </Link>
 
-          return (
-            <li key={item.name}>
-              <a
-                href={item.href}
-                className="group flex items-center py-1 transition-all"
-              >
-                <span
-                  className={`mr-4 h-px transition-all duration-300 ${
-                    isActive
-                      ? "w-16 bg-white"
-                      : "w-8 bg-zinc-700 group-hover:w-16 group-hover:bg-zinc-300"
-                  }`}
-                />
-                <span
-                  className={`text-xs font-semibold uppercase tracking-widest transition-colors ${
-                    isActive
-                      ? "text-white"
-                      : "text-zinc-500 group-hover:text-zinc-200"
-                  }`}
-                >
-                  {item.name}
-                </span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+        {/* Section Jump Links */}
+        <nav aria-label="Page sections" className="hidden items-center gap-1 md:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="rounded-md px-2.5 py-1 text-[13px] text-zinc-400 transition-colors hover:text-[#f5f5f5]"
+            >
+              {item.name}
+            </a>
+          ))}
+        </nav>
+
+        {/* Right side CTAs */}
+        <div className="flex items-center gap-3">
+          <a
+            href="/resume.pdf"
+            download="Vivek_Joshi_Resume.pdf"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="inline-flex text-[13px] text-zinc-400 hover:text-[#f5f5f5] transition-colors"
+          >
+            Resume ↗
+          </a>
+        </div>
+      </div>
+    </header>
   );
 }

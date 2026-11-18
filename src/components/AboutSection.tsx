@@ -5,13 +5,18 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-32 lg:scroll-mt-24"
-      aria-label="About me"
+      className="scroll-mt-24 mb-20 sm:mb-28"
+      aria-label="About Vivek Joshi"
     >
-      <SectionHeader title="About" />
-      <div className="space-y-4 text-zinc-400 text-sm md:text-base leading-relaxed">
+      <SectionHeader
+        number="01"
+        eyebrow="Background & Philosophy"
+        title="Engineering with obsessive frontend craft"
+        description="Scalable UI architectures, robust state patterns, and micro-interactions that feel instantaneous."
+      />
+
+      <div className="rounded-xl border border-[#15181f] bg-[#0b0d10]/70 p-6 sm:p-8 space-y-5 text-[#9ca3af] text-[15px] sm:text-base leading-relaxed">
         {aboutParagraphs.map((paragraph, index) => {
-          // Replace <highlight> tags with styled spans
           const parts = paragraph.split(/(<highlight>.*?<\/highlight>)/g);
 
           return (
@@ -22,7 +27,7 @@ export default function AboutSection() {
                   return (
                     <span
                       key={i}
-                      className="font-medium text-zinc-200 hover:text-white transition-colors"
+                      className="font-medium text-[#f5f5f5]"
                     >
                       {content}
                     </span>

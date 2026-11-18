@@ -2,67 +2,101 @@ import SectionHeader from "./SectionHeader";
 import { experiences } from "@/data/resume";
 
 export default function ExperienceSection() {
+  const stats = [
+    { primary: "Production", secondary: "Reusable UI pattern library", meta: "Big Feathers" },
+    { primary: "2", secondary: "Platforms scaled from 0 → 1", meta: "Ravan.AI" },
+    { primary: "SSR", secondary: "Frontend-for-Backend architecture", meta: "The Entrepreneurship Network" },
+  ];
+
   return (
     <section
       id="experience"
-      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-32 lg:scroll-mt-24"
+      className="scroll-mt-24 mb-20 sm:mb-28"
       aria-label="Work experience"
     >
-      <SectionHeader title="Experience" />
-      <div>
-        <ol className="group/list space-y-8">
-          {experiences.map((exp, index) => (
-            <li
-              key={index}
-              className="group/item transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
+      <SectionHeader
+        number="02"
+        eyebrow="Production Experience"
+        title="Platforms and systems built in production"
+        description="Owned and scaled frontend platforms across early-stage startups and production client applications."
+      />
+
+      <div className="space-y-5">
+        {experiences.map((exp, index) => {
+          const num = String(index + 1).padStart(2, "0");
+          const stat = stats[index] || {
+            primary: "Production",
+            secondary: "Engineering ownership",
+            meta: exp.company,
+          };
+
+          return (
+            <article
+              key={exp.company}
+              className="scroll-mt-24 overflow-hidden rounded-xl border border-[#15181f] bg-[#0b0d10]/60 transition-all duration-300 hover:border-zinc-700/80 hover:bg-[#101318]/70"
             >
-              <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 rounded-xl lg:-inset-x-4 lg:p-4 lg:hover:bg-zinc-900/50 lg:hover:border lg:hover:border-zinc-800/80">
-                {/* Timeline Period */}
-                <header
-                  className="z-10 mb-2 mt-1 text-xs font-mono font-medium tracking-wide text-zinc-500 sm:col-span-2"
-                  aria-label={exp.period}
-                >
-                  {exp.period}
-                </header>
-
-                {/* Content */}
-                <div className="z-10 sm:col-span-6">
-                  <h3 className="font-medium leading-snug text-zinc-200">
-                    <span className="inline-flex items-baseline font-semibold leading-tight text-white text-base">
-                      {exp.title}
-                      <span className="text-zinc-500 mx-2">·</span>
-                      <span className="text-zinc-300 font-normal">{exp.company}</span>
+              <div className="grid gap-6 p-5 sm:p-7 lg:grid-cols-[minmax(0,1fr)_220px]">
+                {/* Main Content Column */}
+                <div className="min-w-0">
+                  <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
+                    <span className="label-mono font-medium text-purple-400">
+                      {num}
                     </span>
-                  </h3>
+                    <h3 className="text-xl font-medium tracking-[-0.015em] text-[#f5f5f5] sm:text-2xl">
+                      {exp.company}
+                    </h3>
+                    <span className="label-mono">{exp.title}</span>
+                    <span className="label-mono ml-auto text-zinc-500 font-mono">
+                      {exp.period}
+                    </span>
+                  </header>
 
-                  {/* Bullet points */}
-                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-zinc-400 list-disc list-outside pl-4 marker:text-zinc-600">
-                    {exp.bullets.map((bullet, bIndex) => (
-                      <li key={bIndex}>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mt-5">
+                    <span className="label-mono text-zinc-500">
+                      Engineering Scope &amp; Ownership
+                    </span>
+                    <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#9ca3af] list-disc list-outside pl-4 marker:text-zinc-600">
+                      {exp.bullets.map((bullet, bIndex) => (
+                        <li key={bIndex}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </div>
 
-                  {/* Technologies */}
-                  <ul
-                    className="mt-4 flex flex-wrap gap-2"
-                    aria-label="Technologies used"
-                  >
-                    {exp.technologies.map((tech) => (
-                      <li
-                        key={tech}
-                        className="rounded-md border border-zinc-800 bg-zinc-900/90 px-2.5 py-1 text-xs font-medium text-zinc-400"
-                      >
-                        {tech}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Tech stack pills */}
+                  <div className="mt-6">
+                    <ul
+                      className="flex flex-wrap gap-1.5"
+                      aria-label="Technologies used"
+                    >
+                      {exp.technologies.map((tech) => (
+                        <li key={tech}>
+                          <span className="inline-flex items-center rounded-md border border-[#1f2937] bg-[#101318] px-2 py-1 font-mono text-[11px] leading-none text-[#9ca3af] transition-colors hover:border-purple-500/40 hover:text-[#f5f5f5]">
+                            {tech}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Right Stat Callout (Om Jaiswal signature layout) */}
+                <div className="flex flex-row flex-wrap gap-x-8 gap-y-5 border-t border-[#15181f] pt-5 lg:flex-col lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6">
+                  <div className="min-w-0">
+                    <div className="font-semibold tracking-[-0.03em] text-[#f5f5f5] tabular-nums text-xl">
+                      {stat.primary}
+                    </div>
+                    <div className="mt-1 text-sm leading-snug text-[#9ca3af]">
+                      {stat.secondary}
+                    </div>
+                    <div className="label-mono mt-2 normal-case tracking-normal text-zinc-500">
+                      {stat.meta}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </li>
-          ))}
-        </ol>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

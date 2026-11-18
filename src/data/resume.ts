@@ -1,8 +1,9 @@
 export const personalInfo = {
   name: "Vivek Joshi",
   title: "Front-End Developer",
+  location: "New Delhi, India",
   tagline:
-    "I build pixel-perfect, accessible, and performant web experiences with modern JavaScript frameworks.",
+    "I craft scalable UI systems, high-performance web applications, and accessible user experiences with React, Next.js, and TypeScript.",
   email: "vivekjo.dev@gmail.com",
   phone: "+91-7536083814",
   linkedin: "https://www.linkedin.com/in/vivek-joshi-78b227274/",

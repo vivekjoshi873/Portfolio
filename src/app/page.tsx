@@ -1,69 +1,87 @@
-import Link from "next/link";
 import Spotlight from "@/components/Spotlight";
 import Nav from "@/components/Nav";
-import SocialLinks from "@/components/SocialLinks";
 import AboutSection from "@/components/AboutSection";
-import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import SkillsSection from "@/components/SkillsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import { personalInfo } from "@/data/resume";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#09090b] text-zinc-100 selection:bg-zinc-800 selection:text-white">
-      {/* Subtle ambient lighting */}
+    <div className="relative min-h-dvh bg-canvas text-ink">
+      {/* Background grid texture & ambient lighting */}
       <Spotlight />
 
-      <div className="relative z-10 mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
-        <div className="lg:flex lg:justify-between lg:gap-12">
-          {/* Left Column (Sticky on desktop) */}
-          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-5/12 lg:flex-col lg:justify-between lg:py-24">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1 text-xs font-medium text-zinc-300 mb-4">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
-                </span>
-                Available for opportunities
+      {/* Sticky top navbar */}
+      <Nav />
+
+      {/* Main Content Container */}
+      <main id="main" className="relative mx-auto w-full max-w-5xl px-5 py-12 sm:px-8 sm:py-20">
+        {/* Hero Section */}
+        <header className="mb-20 sm:mb-28">
+          <h1 className="text-balance-tight max-w-3xl text-5xl leading-tight font-semibold tracking-[-0.03em] text-[#f5f5f5] capitalize">
+            Crafting scalable UI architectures, fast web systems, and delightful digital experiences.
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[#9ca3af] sm:text-base">
+            Front-End Developer at{" "}
+            <strong className="text-[#f5f5f5] font-medium">Big Feathers</strong>, previously scaled frontend platforms at{" "}
+            <strong className="text-[#f5f5f5] font-medium">Ravan.AI</strong>. Specializing in production React, Next.js, and TypeScript applications with a deep focus on performance, accessibility, and AI integrations.
+          </p>
+
+          {/* Quick Metrics Bar (Om Jaiswal signature pattern) */}
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+            <div className="rounded-xl border border-[#15181f] bg-[#0b0d10]/60 p-4 transition-colors hover:border-[#1f2937]">
+              <div className="text-2xl font-semibold tracking-[-0.03em] text-[#f5f5f5] font-mono">
+                3+
               </div>
-
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                <Link href="/" className="hover:text-zinc-200 transition-colors">
-                  {personalInfo.name}
-                </Link>
-              </h1>
-              <h2 className="mt-3 text-lg font-medium tracking-tight text-zinc-300 sm:text-xl">
-                {personalInfo.title}
-              </h2>
-              <p className="mt-4 max-w-xs text-sm leading-relaxed text-zinc-400 md:text-base capitalize">
-                {personalInfo.tagline}
-              </p>
-
-              {/* Scrollspy Navigation */}
-              <Nav />
+              <div className="label-mono mt-1 text-zinc-500">
+                Production Platforms
+              </div>
             </div>
 
-            {/* Resume button & Social Links */}
-            <div className="mt-10 lg:mt-0">
-              <SocialLinks />
+            <div className="rounded-xl border border-[#15181f] bg-[#0b0d10]/60 p-4 transition-colors hover:border-[#1f2937]">
+              <div className="text-2xl font-semibold tracking-[-0.03em] text-[#f5f5f5] font-mono">
+                60×
+              </div>
+              <div className="label-mono mt-1 text-zinc-500">
+                Platform Scaling
+              </div>
             </div>
-          </header>
 
-          {/* Right Column (Scrollable content) */}
-          <main className="pt-24 lg:w-7/12 lg:py-24">
-            <AboutSection />
-            <SkillsSection />
-            <ExperienceSection />
-            <ProjectsSection />
-            <EducationSection />
-            <ContactSection />
-            <Footer />
-          </main>
-        </div>
-      </div>
+            <div className="rounded-xl border border-[#15181f] bg-[#0b0d10]/60 p-4 transition-colors hover:border-[#1f2937]">
+              <div className="text-2xl font-semibold tracking-[-0.03em] text-[#f5f5f5] font-mono">
+                95+
+              </div>
+              <div className="label-mono mt-1 text-zinc-500">
+                Lighthouse Score
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-[#15181f] bg-[#0b0d10]/60 p-4 transition-colors hover:border-[#1f2937]">
+              <div className="text-2xl font-semibold tracking-[-0.03em] text-[#f5f5f5] font-mono">
+                0 → 1
+              </div>
+              <div className="label-mono mt-1 text-zinc-500">
+                UI Systems Architecture
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Structured Sections */}
+        <AboutSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <EducationSection />
+        <ContactSection />
+      </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

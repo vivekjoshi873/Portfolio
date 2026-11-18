@@ -1,13 +1,33 @@
 interface SectionHeaderProps {
+  number: string;
+  eyebrow: string;
   title: string;
+  description?: string;
 }
 
-export default function SectionHeader({ title }: SectionHeaderProps) {
+export default function SectionHeader({
+  number,
+  eyebrow,
+  title,
+  description,
+}: SectionHeaderProps) {
   return (
-    <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#09090b]/90 px-6 py-5 backdrop-blur border-b border-zinc-800/40 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0 lg:border-none">
-      <h2 className="text-xs font-bold uppercase tracking-widest text-zinc-200">
+    <header className="mb-8 sm:mb-12">
+      <div className="mb-4 flex items-center gap-3">
+        <span className="label-mono font-medium text-purple-400">
+          {number}
+        </span>
+        <span className="label-mono">{eyebrow}</span>
+        <span aria-hidden="true" className="h-px flex-1 bg-[#15181f]" />
+      </div>
+      <h2 className="text-balance-tight max-w-3xl text-2xl font-semibold tracking-[-0.025em] text-[#f5f5f5] sm:text-3xl">
         {title}
       </h2>
-    </div>
+      {description && (
+        <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#9ca3af]">
+          {description}
+        </p>
+      )}
+    </header>
   );
 }
