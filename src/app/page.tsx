@@ -21,17 +21,17 @@ export default function Home() {
       <main id="main" className="relative mx-auto w-full max-w-5xl px-5 py-12 sm:px-8 sm:py-20">
         {/* Hero Section */}
         <header className="mb-20 sm:mb-28">
-          <h1 className="text-balance-tight max-w-3xl text-5xl leading-tight font-semibold tracking-[-0.03em] text-[#f5f5f5] capitalize">
-            Crafting scalable UI architectures, fast web systems, and delightful digital experiences.
+          <h1 className="text-balance-tight max-w-3xl text-4xl leading-tight font-semibold tracking-[-0.03em] text-[#f5f5f5]">
+            Crafting scalable full-stack architectures, fast web systems, and delightful digital experiences.
           </h1>
 
           <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[#9ca3af] sm:text-base">
-            Front-End Developer at{" "}
-            <strong className="text-[#f5f5f5] font-medium">Big Feathers</strong>, previously scaled frontend platforms at{" "}
-            <strong className="text-[#f5f5f5] font-medium">Ravan.AI</strong>. Specializing in production React, Next.js, and TypeScript applications with a deep focus on performance, accessibility, and AI integrations.
+            Full-Stack Developer at{" "}
+            <strong className="text-[#f5f5f5] font-medium">Big Feathers</strong>, previously scaled production platforms at{" "}
+            <strong className="text-[#f5f5f5] font-medium">Ravan.AI</strong>. Specializing in production React, Next.js, Node.js, and TypeScript applications with a deep focus on performance, robust APIs, and AI integrations.
           </p>
 
-          {/* Quick Metrics Bar (Om Jaiswal signature pattern) */}
+          {/* Quick Metrics Bar */}
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
             <div className="rounded-xl border border-[#15181f] bg-[#0b0d10]/60 p-4 transition-colors hover:border-[#1f2937]">
               <div className="text-2xl font-semibold tracking-[-0.03em] text-[#f5f5f5] font-mono">
@@ -65,7 +65,7 @@ export default function Home() {
                 0 → 1
               </div>
               <div className="label-mono mt-1 text-zinc-500">
-                UI Systems Architecture
+                Full-Stack Architecture
               </div>
             </div>
           </div>

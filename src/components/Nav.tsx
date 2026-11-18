@@ -18,7 +18,7 @@ export default function Nav() {
           </span>
           <span aria-hidden="true" className="h-3.5 w-px bg-[#1f2937]" />
           <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-purple-400">
-            Front-End
+            Full-Stack
           </span>
         </Link>
 

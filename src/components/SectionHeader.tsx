@@ -20,7 +20,7 @@ export default function SectionHeader({
         <span className="label-mono">{eyebrow}</span>
         <span aria-hidden="true" className="h-px flex-1 bg-[#15181f]" />
       </div>
-      <h2 className="text-balance-tight max-w-3xl text-2xl font-semibold tracking-[-0.025em] text-[#f5f5f5] sm:text-3xl">
+      <h2 className="text-balance-tight max-w-3xl text-2xl font-semibold tracking-[-0.025em] text-[#f5f5f5] sm:text-3xl capitalize">
         {title}
       </h2>
       {description && (
